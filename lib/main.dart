@@ -15,34 +15,43 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text("Hello World"),
         ),
-        body: Center(
-            child: Container(
-          // color: Colors.cyan,
-          width: 200,
-          height: 100,
-          padding: const EdgeInsets.all(20),
-          alignment: Alignment.bottomCenter,
-          child: Text(
-            "hello there I am Hayat",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: 20,
+        body: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            color: Colors.red,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  color: Colors.cyan[200],
+                  width: 50,
+                  height: 100,
+                  padding: const EdgeInsets.all(20),
+                ),
+                Container(
+                  color: Colors.cyan[400],
+                  width: 50,
+                  height: 100,
+                  padding: const EdgeInsets.all(20),
+                ),
+                Container(
+                  color: Colors.cyan[600],
+                  width: 50,
+                  height: 100,
+                  padding: const EdgeInsets.all(20),
+                ),
+                Container(
+                  color: Colors.cyan[800],
+                  width: 50,
+                  height: 100,
+                  padding: const EdgeInsets.all(20),
+                )
+              ],
             ),
           ),
-          decoration: BoxDecoration(
-              color: Colors.lightGreen,
-              gradient:
-                  LinearGradient(colors: [Colors.red, Colors.lightBlue[900]]),
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey[350],
-                  blurRadius: 10,
-                  offset: Offset(5, 5),
-                )
-              ]),
-        )));
+        ));
   }
 }
