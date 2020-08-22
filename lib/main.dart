@@ -11,16 +11,60 @@ void main() {
   ));
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  TextEditingController _nameController = TextEditingController();
+  var myText = "Rubick's Cube";
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text("Hello World"),
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-        child: Container(),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Card(
+                child: Column(
+              children: [
+                Image.asset(
+                  "assets/cube.jpg",
+                  fit: BoxFit.cover,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    myText,
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      // keyboardType: TextInputType.number,
+                      // obscureText: true,
+                      controller: _nameController,
+                      decoration: InputDecoration(
+                          hintText: "Jhon doe",
+                          labelText: "Name",
+                          border: OutlineInputBorder()),
+                    ))
+              ],
+            )),
+          ),
+        ),
       ),
       drawer: Drawer(
         child: ListView(
@@ -65,8 +109,13 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.edit),
+        onPressed: () {
+          myText = _nameController.text;
+          setState(() {
+            
+          });
+        },
+        child: Icon(Icons.check),
       ),
     );
   }
