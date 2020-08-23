@@ -1,10 +1,24 @@
 # hello_world
 
-A new Flutter project.
+checkout all the branches
+
+made this using:
+
+* English
+> https://youtu.be/P2IGQT3BZQo
+* hindi
+> https://youtu.be/Wdx8vwN_nWI
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### ⬇ Installation
+```sh
+flutter pub get
+```
+### 👟 Running
+```sh
+flutter run
+```
 
 A few resources to get you started if this is your first Flutter project:
 
